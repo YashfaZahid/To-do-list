@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script
+      src="https://kit.fontawesome.com/57fe26dd90.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="style\style.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,15 +20,54 @@
           <input type="text" placeholder="Enter your task" />
           <button class="btn blue">ADD</button>
         </div>
+
+        <!-- Tasks -->
         <div class="lists-container column">
-          <img src="assets\Capture.PNG" alt="" />
-          <p>Empty Todo List</p>
+          <!-- Task 1 -->
+          <div class="lists-box">
+            <i class="fa-solid fa-file fa"></i>
+            <p class="task-test">I have something to do blahhahh kajddh!</p>
+
+            <i class="fa-solid fa-circle-check fa" onclick="myfunction(this)"></i>
+            <i class="fa-solid fa-trash fa"></i>
+          </div>
+          <!-- Task 2 -->
+          <div class="lists-box">
+            <i class="fa-solid fa-file fa"></i>
+            <p class="task-test"  >I have something to do!</p>
+
+            <i class="fa-solid fa-circle-check fa" onclick="myfunction(this)"></i>
+            <i class="fa-solid fa-trash fa"></i>
+          </div>
         </div>
-        <div class="container-box end">
+        <!-- Tasks end -->
+        <div class="container-box">
           <h5>Total Tasks:</h5>
           <button class="btn red">DELETE ALL</button>
         </div>
       </div>
     </div>
+
+
+    <script>
+     function myfunction(clickedButton){
+      const check_colour=window.getComputedStyle(clickedButton).color;
+      const parentBox=clickedButton.closest(".lists-box");
+       const text = parentBox.querySelector('p');
+      if(check_colour ==="rgb(0, 128, 0)"){
+        clickedButton.style.color="black";
+        parentBox.style.color="black";
+        text.style.textDecoration="none";
+      } else{
+        clickedButton.style.color="green";
+        parentBox.style.color="green";
+        text.style.textDecoration="line-through";
+      }
+      }
+
+      var totalTasks=0;
+      
+
+    </script>
   </body>
 </html>
