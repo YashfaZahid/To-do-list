@@ -83,7 +83,7 @@ function delete_one(event) {
 function delete_all() {
   if (confirm("Are you sure you want to delete all tasks?")) {
     localStorage.clear();
-    document.getElementById("task-list").innerHTML = "";
+    document.getElementById("tasks").innerHTML = "";
     tasks_arr = []; 
     totalTasks = 0;
     document.getElementById("task").innerText = "Total Tasks: 0";
