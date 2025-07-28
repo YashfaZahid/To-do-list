@@ -81,13 +81,11 @@ function delete_one(event) {
 
 // Delete all tasks
 function delete_all() {
-  if (confirm("Are you sure you want to delete all tasks?")) {
-    localStorage.clear();
-    document.getElementById("tasks").innerHTML = "";
-    tasks_arr = []; 
-    totalTasks = 0;
-    document.getElementById("task").innerText = "Total Tasks: 0";
-  }
+  alert("All tasks have been deleted");
+  localStorage.clear();
+  document.getElementById("tasks").innerHTML = "";
+  tasks_arr = [];
+  document.getElementById("task").innerText = "Total Tasks: 0";
 }
 
 // render all saved tasks
